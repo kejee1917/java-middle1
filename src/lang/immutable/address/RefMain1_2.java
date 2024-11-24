@@ -1,10 +1,12 @@
 package lang.immutable.address;
 
-public class RefMain1_1 {
+public class RefMain1_2 {
     public static void main(String[] args) {
+        //사이드이펙트 해결방안 : 간단하다!
+        //서로 다른 인스턴스를 바라보면 됨.
         //참조형 변수는 하나의 인스턴스를 공유할수 있다.
         Address a = new Address("서울"); //x001
-        Address b = a; //x001 // 이렇게 작성하면 사이드이펙트 날수 있는데.. 자바 문법상 막을 방법이 없음!
+        Address b = new Address("서울"); //x002
         System.out.println("a = " + a);
         System.out.println("b = " + b);
 
